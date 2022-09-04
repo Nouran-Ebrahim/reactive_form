@@ -1,13 +1,7 @@
 {
   "users": [
     {
-      "name": "nouran",
-      "email": "nouran@gmail.com",
-      "address": "cairo",
-      "phone": 123654847,
-      "gender": "femal"
-    },
-    {
+      "id": 2,
       "name": "ali",
       "email": "ali@gmail.com",
       "address": "cairo",
@@ -15,6 +9,7 @@
       "gender": "Male"
     },
     {
+      "id": 3,
       "name": "n",
       "email": "nade@gmail.com",
       "address": "cairo",

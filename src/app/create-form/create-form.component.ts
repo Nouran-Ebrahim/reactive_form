@@ -14,6 +14,7 @@ export class CreateFormComponent implements OnInit {
   ngOnInit(): void {
   }
   contactForm = new FormGroup({
+    id:new FormControl('', [Validators.required]),
     name: new FormControl('', [Validators.required,Validators.minLength(10)]),
     email: new FormControl('', [Validators.required]),
     phone: new FormControl('', [Validators.required]),
@@ -25,6 +26,9 @@ export class CreateFormComponent implements OnInit {
     this.formService.getData().subscribe((res: any) => {
       this.users=res;
   })}
+  get id(){
+    return this.contactForm.get('id');
+  }
   get name(){
     return this.contactForm.get('name');
   }
@@ -41,15 +45,20 @@ export class CreateFormComponent implements OnInit {
     return this.contactForm.get('gender');
   }
    
-  onsubmit() {
-    if (this.contactForm.valid){
-
-    this.formService.save(this.contactForm.value).subscribe(() => {
-      this.load();
-      //alertify.success("Saved Successfully.")
-      console.log(this.contactForm.value)
-    
-  })}}
+  submit() {
+    if (this.contactForm.valid) {
+      const editId = this.contactForm.getRawValue().id;
+      if (editId != '' && editId != null) {
+        this.formService.update(editId, this.contactForm.getRawValue()).subscribe(() => {
+          this.load();
+        });
+      }else {
+        this.formService.save(this.contactForm.value).subscribe(() => {
+          this.load();
+        });
+      }
+    }
+}
 
 
 }

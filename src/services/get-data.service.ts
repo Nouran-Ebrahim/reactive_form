@@ -14,14 +14,14 @@ export class GetDataService {
   save(data:any){
     return this.http.post(`${this.api}`,data)
   }
-  delete(name: any){
-    return this.http.delete(`${this.api}/${name}`)
+  delete(id: any){
+    return this.http.delete(`${this.api}/${id}`)
   }
-  update(name:any,old:any){
-    return this.http.put(`${this.api}/${name}`,old)
+  update(id:any,old:any){
+    return this.http.put(`${this.api}/${id}`,old)
     
   }
-  getUserByname(name:any){
-    return this.http.get(`${this.api}/${name}`)
+  getUserByid(id:any){
+    return this.http.get(`${this.api}/${id}`)
   }
 }
