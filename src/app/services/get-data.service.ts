@@ -19,6 +19,8 @@ export class GetDataService {
     return this.http.delete(`${this.api}/${id}`);
   }
   update(id: any, old: any) {
+    console.log("the tatget",id)
+    console.log("the data",old)
     return this.http.put(`${this.api}/${id}`, old);
   }
   getUserByid(id: any) {

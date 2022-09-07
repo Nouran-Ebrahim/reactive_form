@@ -1,27 +1,27 @@
 {
   "users": [
     {
-      "id": 1,
-      "name": "nouran",
-      "email": "nouran@gmail.com",
-      "address": "cairo",
-      "phone": 123654847,
-      "gender": "femal"
-    },
-    {
-      "id": 2,
-      "name": "ali",
-      "email": "ali@gmail.com",
-      "address": "cairo",
-      "phone": 123654847,
-      "gender": "Male"
-    },
-    {
       "id": 4,
-      "name": "nadine El Mohamady",
-      "email": "nouran@gmail.com",
+      "name": "Nadine El Mohamady",
+      "email": "nadine@gmail.com",
       "phone": 1017944211,
-      "address": "Alexandria, Al ibrahimia Egypt",
+      "address": "alex",
+      "gender": "Female"
+    },
+    {
+      "id": 5,
+      "name": "Nouran El Mohamady",
+      "email": "nouran@gmail.com",
+      "phone": 1223701860,
+      "address": "myamiiii",
+      "gender": "Female"
+    },
+    {
+      "id": 6,
+      "name": "khlood",
+      "email": "khlood@gmail.com",
+      "phone": 1223701860,
+      "address": "tanta",
       "gender": "Female"
     }
   ]

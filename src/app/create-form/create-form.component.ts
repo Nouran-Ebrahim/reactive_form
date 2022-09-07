@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { MatDialog } from '@angular/material/dialog';
 import { GetDataService } from 'src/app/services/get-data.service';
 
 @Component({
@@ -11,7 +10,7 @@ import { GetDataService } from 'src/app/services/get-data.service';
 export class CreateFormComponent implements OnInit {
   contactForm = new FormGroup({
     id: new FormControl({ value: '', disabled: true }),
-    name: new FormControl('', [Validators.required, Validators.minLength(10)]),
+    name: new FormControl('', [Validators.required]),
     email: new FormControl('', [Validators.required]),
     phone: new FormControl('', [Validators.required]),
     address: new FormControl('', [Validators.required]),
@@ -21,6 +20,21 @@ export class CreateFormComponent implements OnInit {
   constructor(private formService: GetDataService) { }
 
   ngOnInit(): void {}
+
+  
+
+  saveData() {
+    if (this.contactForm.valid) {
+
+        this.formService.save(this.contactForm.value).subscribe(() => {
+            console.log('saved');
+          });
+      
+    }
+    else {
+      alert("complete the data")
+   }
+  }
 
   get id() {
     return this.contactForm.get('id');
@@ -39,22 +53,5 @@ export class CreateFormComponent implements OnInit {
   }
   get gender() {
     return this.contactForm.get('gender');
-  }
-
-  saveData() {
-    if (this.contactForm.valid) {
-      const editId = this.contactForm.getRawValue().id;
-      if (editId != '' && editId != null) {
-        this.formService
-          .update(editId, this.contactForm.getRawValue())
-          .subscribe(() => {
-            console.log('Updated');
-          });
-      } else {
-        this.formService.save(this.contactForm.value).subscribe(() => {
-          console.log('Saved');
-        });
-      }
-    }
   }
 }

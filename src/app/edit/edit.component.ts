@@ -32,7 +32,7 @@ export class EditComponent implements OnInit {
   }
   contactForm = new FormGroup({
     id: new FormControl('', [Validators.required]),
-    name: new FormControl('', [Validators.required, Validators.minLength(10)]),
+    name: new FormControl('', [Validators.required]),
     email: new FormControl('', [Validators.required]),
     phone: new FormControl('', [Validators.required]),
     address: new FormControl('', [Validators.required]),
@@ -42,16 +42,15 @@ export class EditComponent implements OnInit {
   editUser() {
     if (this.contactForm.valid) {
       const editId = this.contactForm.getRawValue().id;
+      console.log(editId)
       if (editId != '' && editId != null) {
-        this.edit
-          .update(editId, this.contactForm.getRawValue())
+        this.edit.update(editId, this.contactForm.getRawValue())
           .subscribe(() => {
+            this.closeEditData();
             console.log('Updated');
           });
       } else {
-        this.edit.save(this.contactForm.value).subscribe(() => {
-          console.log('Saved');
-        });
+           alert("no data")
       }
     }
   }
