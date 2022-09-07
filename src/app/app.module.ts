@@ -8,18 +8,18 @@ import { CreateFormComponent } from './create-form/create-form.component';
 import { CreateTableComponent } from './create-table/create-table.component';
 import { EditComponent } from './edit/edit.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {MatTableModule} from '@angular/material/table';
+import { MatTableModule } from '@angular/material/table';
 import { HttpClientModule } from '@angular/common/http';
 import { MatDialogModule, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { MatCardModule } from '@angular/material/card';
-import { MatFormFieldModule } from "@angular/material/form-field";
-import { MatInputModule } from '@angular/material/input'
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 @NgModule({
   declarations: [
     AppComponent,
     CreateFormComponent,
     CreateTableComponent,
-    EditComponent
+    EditComponent,
   ],
   imports: [
     BrowserModule,
@@ -32,9 +32,9 @@ import { MatInputModule } from '@angular/material/input'
     MatDialogModule,
     MatFormFieldModule,
     MatInputModule,
-    MatCardModule
+    MatCardModule,
   ],
-  providers: [ { provide: MAT_DIALOG_DATA, useValue: {} },],
-  bootstrap: [AppComponent]
+  providers: [{ provide: MAT_DIALOG_DATA, useValue: {} }],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

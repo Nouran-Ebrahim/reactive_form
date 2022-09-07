@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "reactive-form": {
+    "nouran": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/reactive-form",
+            "outputPath": "dist/nouran",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -23,7 +23,6 @@
               "src/assets"
             ],
             "styles": [
-              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -65,10 +64,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "reactive-form:build:production"
+              "browserTarget": "nouran:build:production"
             },
             "development": {
-              "browserTarget": "reactive-form:build:development"
+              "browserTarget": "nouran:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -76,7 +75,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "reactive-form:build"
+            "browserTarget": "nouran:build"
           }
         },
         "test": {
@@ -91,7 +90,6 @@
               "src/assets"
             ],
             "styles": [
-              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -101,6 +99,6 @@
     }
   },
   "cli": {
-    "analytics": "97eacd04-5bf6-484b-8bf8-937f44a45486"
+    "analytics": "fe242864-d378-475e-80a1-9bb6bef66047"
   }
 }
